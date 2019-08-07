@@ -18,10 +18,9 @@ public interface ProductRemoteClient {
 
 }
 
-
 //编写对应商品服务的断容器功能
 @Component
-class HystrixProductRemoteClient implements ProductRemoteClient{
+class HystrixProductRemoteClient implements ProductRemoteClient {
 
     //调用远程服务接口失效,调用该方法进行处理
     @Override
@@ -29,4 +28,5 @@ class HystrixProductRemoteClient implements ProductRemoteClient{
         return SystemResult.build(405,"远程商品服务时效请稍后再试");
     }
 }
+
 

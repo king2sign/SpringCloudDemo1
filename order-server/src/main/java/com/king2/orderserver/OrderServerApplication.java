@@ -4,13 +4,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 //@EnableDiscoveryClient和@EnableEurekaClient共同点就是：都是能够让注册中心能够发现，扫描到改服务。
 //不同点：@EnableEurekaClient只适用于Eureka作为注册中心，@EnableDiscoveryClient 可以是其他注册中心
 //@EnableDiscoveryClient
-@EnableEurekaClient //指定Eureka-Client客户端也就是服务提供者
 @SpringBootApplication
+@EnableEurekaClient //指定Eureka-Client客户端也就是服务提供者
 @EnableFeignClients  //使用Feign声明式服务调用组件,不用RestTemplate进行服务使用
 public class OrderServerApplication {
 
